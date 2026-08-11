@@ -29,29 +29,32 @@ function Home() {
 
     <main id="main">
       <section id="top" className="hero section-pad">
-        <div className="hero-meta reveal">Based in {site.location}<span /> Building in public, selectively</div>
-        <h1 className="hero-title"><span>I make room for</span><em>intelligence</em><span>in products & play.</span></h1>
+        <div className="hero-meta">Based in {site.location}<span /> Product-minded by default</div>
+        <div className="hero-signal-map" aria-hidden="true">
+          <span>Signal</span><i /><span>Context</span><i /><span>Choice</span>
+        </div>
+        <h1 className="hero-title"><span>I make AI</span><em>worth choosing.</em></h1>
         <div className="hero-bottom">
-          <p>I explore AI-native products, agents and interactive experiences—where useful systems meet human curiosity.</p>
+          <p>I turn messy signals into useful, human-centered product decisions—from AI agents to interactive worlds.</p>
           <a className="circle-link" href="#work"><span>Selected<br />work</span><Arrow /></a>
         </div>
-        <div className="hero-gesture" aria-hidden="true"><span>✳</span><i /></div>
+        <div className="hero-anchor" aria-hidden="true"><b>01</b><span>Input → intent → action</span></div>
       </section>
 
       <section id="about" className="about section-pad section-rule">
         <p className="section-label">( About )</p>
         <div className="about-copy">
-          <h2>Studying at Zhejiang University. Following the moment technology starts to feel <em>alive.</em></h2>
+          <h2>A product lens for the moments when intelligence becomes <em>interaction.</em></h2>
           <div>
-            <p>I’m Aban, an undergraduate drawn to the product questions around AI agents, Game AI and human–AI interaction.</p>
-            <p>Right now I’m learning by making: small tools, private systems, and playable ideas.</p>
+            <p>I’m Aban, an undergraduate at Zhejiang University exploring AI product, agents, Game AI and human–AI interaction.</p>
+            <p>I make systems that clarify messy inputs—and interactive ideas that people can feel.</p>
           </div>
         </div>
         <div className="interest-row" aria-label="Areas of exploration"><span>AI Product</span><span>AI Agent</span><span>Game AI</span><span>Human–AI Interaction</span><span>AI Native</span></div>
       </section>
 
       <section id="work" className="work section-pad section-rule">
-        <div className="section-heading"><p className="section-label">( Selected work )</p><p>Three explorations in turning intelligence into a better experience.</p></div>
+        <div className="section-heading"><p className="section-label">( Selected work )</p><p>Three product explorations. Each begins with a constraint, then turns it into an experience.</p></div>
         <div className="work-grid">
           <div className="project-list" aria-label="Selected projects">
             {projects.map((project) => <button key={project.slug} aria-pressed={activeProject === project.slug} className={activeProject === project.slug ? 'is-active' : ''} onMouseEnter={() => setActiveProject(project.slug)} onFocus={() => setActiveProject(project.slug)} onClick={() => setActiveProject(project.slug)}>
@@ -62,16 +65,17 @@ function Home() {
             <ProjectVisual key={active.slug} project={active} />
             <p className="eyebrow">{active.eyebrow}</p>
             <h3>{active.summary}</h3>
+            <p className="project-role"><span>My work</span>{active.role}</p>
             <a className="text-link" href={`#/projects/${active.slug}`}>Read the project <Arrow /></a>
           </div>
         </div>
       </section>
 
       <section className="exploration section-pad section-rule">
-        <div className="section-heading"><p className="section-label">( In exploration )</p><p>Not a timeline. More a constellation of things I’m thinking through.</p></div>
+        <div className="section-heading"><p className="section-label">( Practice )</p><p>Not a résumé timeline. A set of product questions I keep returning to.</p></div>
         <div className="exploration-grid">
           <div className="school-block"><span>Currently at</span><h2>Zhejiang<br />University</h2><p>Undergraduate · Hangzhou</p></div>
-          <div className="exploration-list"><span>01</span><p>Designing <em>AI products</em> that earn attention by being genuinely useful.</p><span>02</span><p>Exploring <em>agents</em> as collaborative interfaces, not magic buttons.</p><span>03</span><p>Looking at <em>Game AI</em> as a new language for interaction and emotion.</p><span>04</span><p>Learning from recruiting and <em>AI talent</em> workflows.</p></div>
+          <div className="exploration-list"><span>01</span><p>Designing <em>AI products</em> that explain themselves through their behaviour.</p><span>02</span><p>Exploring <em>agents</em> as collaborative interfaces, not magic buttons.</p><span>03</span><p>Using <em>Game AI</em> to ask how systems can carry emotion, agency and consequence.</p></div>
         </div>
       </section>
 
@@ -102,8 +106,8 @@ function ProjectPage({ project }: { project: Project }) {
         <p className="project-description">{project.description}</p>
       </section>
       <section className="project-spec section-pad section-rule">
-        <div><p className="section-label">( What it explores )</p><ul>{project.focus.map((item) => <li key={item}>{item}</li>)}</ul></div>
-        <div><p className="section-label">( Built with )</p><div className="stack">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></div>
+        <div><p className="section-label">( My contribution )</p><ul>{project.contribution.map((item) => <li key={item}>{item}</li>)}</ul></div>
+        <div><p className="section-label">( Product system )</p><ul>{project.focus.map((item) => <li key={item}>{item}</li>)}</ul><p className="section-label stack-label">( Built with )</p><div className="stack">{project.stack.map((item) => <span key={item}>{item}</span>)}</div></div>
       </section>
       <div className="next-project section-pad"><a href={`#/projects/${projects[(projects.findIndex(p => p.slug === project.slug) + 1) % projects.length].slug}`}>Next exploration <Arrow /></a></div>
     </main>

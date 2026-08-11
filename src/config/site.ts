@@ -3,8 +3,10 @@ export type Project = {
   number: string
   title: string
   eyebrow: string
+  role: string
   summary: string
   description: string
+  contribution: string[]
   focus: string[]
   stack: string[]
   outcome: string
@@ -16,7 +18,7 @@ export const site = {
   title: 'AI products & interactive experiences',
   email: 'abandonpeter1@gmail.com',
   github: 'https://github.com/jinzhai001',
-  linkedin: 'www.linkedin.com/in/aban-zhai-4436333a7',
+  linkedin: 'https://www.linkedin.com/in/aban-zhai-4436333a7',
   location: 'Hangzhou, China',
   school: 'Zhejiang University',
 }
@@ -27,11 +29,13 @@ export const projects: Project[] = [
     number: '01',
     title: 'TaskRadar',
     eyebrow: 'AI task intelligence',
-    summary: 'Turn scattered screenshots and shared content into an actionable, de-duplicated plan.',
-    description: 'TaskRadar explores a quieter kind of assistant: one that notices the commitments hiding in the things we already save and share. It extracts tasks, deadlines, times and places, then turns fragments into a useful next action.',
+    role: 'Product framing · interaction model · prototype',
+    summary: 'From a screenshot to a next action — without asking people to reorganize their lives.',
+    description: 'TaskRadar explores a quieter kind of assistant: one that notices commitments hidden inside what we already save and share. It turns loose fragments into candidate tasks, then makes the result legible enough for a person to trust and act on.',
+    contribution: ['Framed the capture-to-action product problem', 'Designed the extraction and confirmation interaction', 'Defined task de-duplication as a product behaviour'],
     focus: ['Screenshot & share-sheet import', 'Task / DDL / time / location extraction', 'Duplicate-aware task intelligence'],
     stack: ['React Native', 'Expo', 'TypeScript', 'OCR', 'LLM', 'DeepSeek'],
-    outcome: 'From information capture to intent capture.',
+    outcome: 'Designing for the moment information becomes intent.',
     accent: 'coral',
   },
   {
@@ -39,11 +43,13 @@ export const projects: Project[] = [
     number: '02',
     title: 'CVGet',
     eyebrow: 'Local-first talent intelligence',
-    summary: 'A private workspace for turning a pile of resumes into a searchable candidate system.',
-    description: 'CVGet is built around a simple belief: recruiting workflows can be intelligent without sending sensitive candidate data away. It gives headhunters a local-first workflow for importing, parsing, organizing, searching and de-duplicating resumes.',
+    role: 'Product direction · workflow design · local-first system',
+    summary: 'A private candidate workspace for turning a stack of resumes into a working talent system.',
+    description: 'CVGet starts with a constraint that changes the product: candidate data should remain on the user’s computer. From that principle, I shaped a local workflow for importing, parsing, searching and de-duplicating resumes without treating privacy as an afterthought.',
+    contribution: ['Set the local-first product principle', 'Mapped the resume import-to-search workflow', 'Explored an LLM-assisted structured candidate profile'],
     focus: ['Data stays on the user’s computer', 'Structured resume parsing & search', 'Fast candidate management without a cloud dependency'],
     stack: ['Tauri 2', 'React', 'TypeScript', 'Rust', 'SQLite', 'LLM Resume Parsing'],
-    outcome: 'Intelligence that respects where the data lives.',
+    outcome: 'Making privacy a product advantage, not a limitation.',
     accent: 'blue',
   },
   {
@@ -51,17 +57,19 @@ export const projects: Project[] = [
     number: '03',
     title: '遗忘之饮',
     eyebrow: 'Interactive narrative experiment',
-    summary: 'A small game about memory, forgetting, and the choices that remain after both.',
-    description: '遗忘之饮 is an interactive narrative experiment where remembering is not automatically a gift. The player navigates a world shaped by selected memories, and every choice changes what can still be held onto.',
+    role: 'Narrative premise · choice system · game design',
+    summary: 'An interactive narrative about memory, forgetting, and the choices that remain after both.',
+    description: '遗忘之饮 is a small game experiment where remembering is not automatically a gift. I used choice as a way to change what can be held onto, so the player’s decisions shape both the world and the meaning of memory.',
+    contribution: ['Built the premise around selective memory', 'Designed choice as a narrative state change', 'Prototyped an emotional interaction through play'],
     focus: ['Choice as a narrative mechanic', 'Memory as world state', 'Emotional interaction through play'],
     stack: ['Interactive Narrative', 'Game Design', 'Choice Systems', 'Narrative Prototyping'],
-    outcome: 'A story that asks what we choose to carry forward.',
+    outcome: 'Treating interaction as a way to make a story felt.',
     accent: 'lime',
   },
 ]
 
 export const thoughts = [
-  { title: 'Agent products need a better sense of timing', tag: 'AI Agent', date: 'Soon' },
-  { title: 'Game AI is a design material, not just a feature', tag: 'Game AI', date: 'Soon' },
-  { title: 'What makes an AI-native interaction feel natural?', tag: 'Product Thinking', date: 'Soon' },
+  { title: 'Agent products need a better sense of timing', tag: 'AI Agent', date: 'In progress' },
+  { title: 'Game AI is a design material, not just a feature', tag: 'Game AI', date: 'In progress' },
+  { title: 'What makes an AI-native interaction feel natural?', tag: 'Product thinking', date: 'In progress' },
 ]
